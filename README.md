@@ -1,0 +1,2 @@
+# FLDashboard
+Federated Learning Dashboard
