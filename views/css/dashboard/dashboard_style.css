@@ -1,0 +1,353 @@
+div#now_status {
+	position: absolute;
+	width: 529px;
+	height: 258px;
+	left: 287px;
+	top: 23px;
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+div#statusInfoFrame {
+	display: flex; 
+}
+img#server, img#client, img#round {
+	top: 30px;
+	width: 48px;
+	height: 48px;
+	position: relative;
+}
+img#server {
+	left: 80px;
+}
+p#serverCount, p#clientCount, p#roundCount {
+	font: bold;
+	font-size: 30px;
+	text-align: center;
+	position: relative;
+}
+p#serverCount {
+	left: 50px;
+	top: 60px;
+}
+p#serverText, p#clientText, p#roundText {
+	color: #7B7B7B;
+	font-size: 12px;
+	position: relative;
+}
+p#serverText {
+	left: 26px;
+	top: 110px;
+}
+img#client {
+	left: 150px;
+}
+p#clientCount {
+	left: 100px;
+	top: 58px;
+}
+p#clientText {
+	left: 62px;
+	top: 110px;
+}
+img#round {
+	left: 180px;
+}
+p#roundCount {
+	left: 146px;
+	top: 54px;
+}
+p#roundText {
+	left: 124px;
+	top: 110px;
+}
+
+p#nstatusText {
+	font: bold;
+	font-size: 18px;
+	text-align: left;
+	position: relative;
+	left: 30px;
+	top: 34px;
+}
+div#onstatusFrame, div#offstatusFrame {
+	width: 245px;
+	height: 49px;
+	border-radius: 30px;
+	position: relative;
+}
+div#onstatusFrame {
+	background-color: #B0EDA6;
+	left: 10px;
+	top: 30px;
+}
+div#offstatusFrame {
+	background-color: #EDAEA6;
+	left: 270px;
+	bottom: 46px;
+}
+p#onText, p#offText {
+	font: bold;
+	font-size: 26px;
+	position: relative;
+	top: 8px;
+	left: 30px;
+}
+p#onCount, p#offCount {
+	font: bold;
+	font-size: 24px;
+	position: relative;
+	left: 40px;
+	text-align: center;
+	bottom: 46px;
+}
+
+div#data_status {
+	position: absolute;
+	width: 563px;
+	height: 615px;
+	left: 847px;
+	top: 23px;
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+div#dataSizeFrame {
+	position: absolute;
+	width: 163px;
+	height: 126px;
+	left: 104px;
+	top: 15px;
+}
+img#datasize {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 38px;
+	top: 12px;
+}
+p#datasizeCount {
+	position: absolute;
+	width: 75px;
+	height: 37px;
+	left: 24px;
+	top: 36px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	
+	text-align: center;
+	letter-spacing: 0.4px;
+}
+p#datasizeText {
+	position: absolute;
+	width: 75px;
+	height: 37px;
+	left: 24px;
+	top: 80px;
+	
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+}
+div#classSizeFrame {
+	position: absolute;
+	width: 163px;
+	height: 126px;
+	left: 306px;
+	top: 15px;
+}
+img#classsize {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 57px;
+	top: 12px;
+}
+p#classsizeCount {
+	position: absolute;
+	width: 59px;
+	height: 37px;
+	left: 52px;
+	top: 36px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+p#classsizeText {
+	position: absolute;
+	width: 59px;
+	height: 37px;
+	left: 52px;
+	top: 80px;
+	
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+}
+p#datasizeTextClass {
+	position: absolute;
+	width: 223px;
+	height: 10px;
+	left: 25px;
+	top: 149px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 10px;
+}
+canvas#totaldatasize {
+	margin: 0 auto;
+	position: absolute;
+	top: 199px;
+}
+
+div#train_status {
+	position: absolute;
+	width: 845px;
+	height: 838px;
+	left: 1441px;
+	top: 23px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+div#trainingFrame {
+	position: absolute;
+	width: 206px;
+	height: 126px;
+	left: 171px;
+	top: 20px;
+}
+img#traintime {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 64px;
+	top: 7px;
+}
+p#timeavgText {
+	position: absolute;
+	width: 46px;
+	height: 15px;
+	left: 106px;
+	top: 20px;
+}
+p#timeCount {
+	position: absolute;
+	left: 34px;
+	top: 36px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+p#timeText {
+	position: absolute;
+	left: 56px;
+	top: 80px;
+	
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;	
+}
+div#trainingResFrame {
+	position: absolute;
+	width: 292px;
+	height: 126px;
+	left: 408px;
+	top: 20px;
+}
+img#trainingres {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 120px;
+	top: 7px;
+}
+p#trainingresText {
+	position: absolute;
+	left: 156px;
+	top: 20px;
+}
+p#accCount {
+	position: absolute;
+	left: 40px;
+	top: 36px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+}
+p#accText {
+	position: absolute;
+	left: 60px;
+	top: 80px;
+
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+}
+p#lossCount {
+	position: absolute;
+	left: 210px;
+	top: 36px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+}
+p#lossText {
+	position: absolute;
+	left: 225px;
+	top: 80px;
+	
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+}
+p#accandlosslinetext {
+	position: absolute;
+	left: 25px;
+	top: 126px;
+	font-size: 22px;
+}
+canvas#accuracylossline {
+	position: absolute;
+	top: 180px;
+}
+p#trainingtimelinetext {
+	position: absolute;
+	left: 25px;
+	top: 460px;
+	font-size: 22px;
+}
+canvas#trainingtimeline {
+	position: absolute;
+	top: 530px;
+}
+

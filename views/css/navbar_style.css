@@ -7,6 +7,7 @@
   overflow-y: auto;
   background: #1a1a1a;
   color: #fff;
+  z-index: 3;
 }
 
 .content-container {

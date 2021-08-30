@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/HwangDongJun/FLDashboard#readme",
   "dependencies": {
+    "chart.js": "^3.5.1",
     "express": "^4.17.1",
-    "path": "^0.12.7"
+    "install": "^0.13.0",
+    "jade": "^1.11.0",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7",
+    "vue": "^2.6.14"
   }
 }

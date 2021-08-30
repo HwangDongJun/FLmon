@@ -1,0 +1,77 @@
+div#learning_reminder {
+	position: absolute;
+	width: 528px;
+	height: 452px;
+	left: 289px;
+	top: 820px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+img#progressbarimg {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	bottom: 16px;
+}
+.totalprogress {
+	background-color: rgb(22, 21, 21);
+	color: #E5E5E5;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	text-align: center;
+}
+
+
+div#client_status {
+	position: absolute;
+	width: 563px;
+	height: 609px;
+	left: 847px;
+	top: 663px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+
+div#start_time {
+	position: absolute;
+	width: 845px;
+	height: 386px;
+	left: 1442px;
+	top: 886px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+img#starttime {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 38px;
+	top: 28px;
+}
+p#starttimeText {
+	position: absolute;
+	left: 104px;
+	top: 14px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+canvas#starttimebubble {
+	position: absolute;
+	top: 100px;
+	width: 100px;
+	height: 400px;
+}

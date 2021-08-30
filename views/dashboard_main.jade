@@ -1,0 +1,115 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		link(rel="stylesheet", type="text/css", href="/views/css/navbar_style.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/dashboard/dashboard_style.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/dashboard/dashboard_style_progressbar.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/dashboard/learning_reminder.css")
+		script(src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0")
+		title FLDashboard
+	body
+		include ./side_navbar.jade
+		.content-container
+			.container-fluid
+				// Main component for a primary marketing message or call to action
+				.jumbotron
+					#now_status
+						#statusInfoFrame
+							img(id="server", src="/views/img/server.png", alt="federated learning server")
+							p(id="serverCount") 1
+							p(id="serverText") servers
+							img(id="client", src="/views/img/client.png", alt="federated learning client")
+							p(id="clientCount") 286
+							p(id="clientText") clients
+							img(id="round", src="/views/img/round.png", alt="federated learning round")
+							p(id="roundCount") 4
+							p(id="roundText") round
+						#nowstatusFrame
+							p(id="nstatusText") Now Status
+						#onstatusFrame
+							p(id="onText") ON
+							p(id="onCount") 252
+						#offstatusFrame
+							p(id="offText") OFF
+							p(id="offCount") 34
+					script(src="https://canvasjs.com/assets/script/canvasjs.min.js")
+					#data_status
+						#dataSizeFrame
+							img(id="datasize", src="/views/img/datasize.png", alt="learning data size")
+							p(id="datasizeCount") 7,804
+							p(id="datasizeText") Data Size
+						#classSizeFrame
+							img(id="classsize", src="/views/img/classsize.png", alt="learning class size")
+							p(id="classsizeCount") 5
+							p(id="classsizeText") Class Size
+						p(id="datasizeTextClass") Total Data Size / class
+						canvas(id="totaldatasize", style="height: 50px; width: 70px")
+						script(type="text/javascript", src="/views/js/totaldatasize.js")
+					#train_status
+						#trainingFrame
+							img(id="traintime", src="/views/img/time.png", alt="training time")
+							p(id="timeavgText") Average
+							p(id="timeCount") 10m 20s
+							p(id="timeText") Training Time
+						#trainingResFrame
+							img(id="trainingres", src="/views/img/accuracy.png", alt="training accuracy")
+							p(id="trainingresText") Average
+							p(id="accCount") 76.43%
+							p(id="accText") Accuracy
+							p(id="lossCount") 0.81
+							p(id="lossText") Los
+						p(id="accandlosslinetext") Accuracy & Loss
+						canvas(id="accuracylossline", style="height: 100px; width: 300px;")
+						script(type="text/javascript", src="/views/js/accuracyloss.js")
+						p(id="trainingtimelinetext") Training Time
+						canvas(id="trainingtimeline", style="height: 100px; width: 300px;")
+						script(type="text/javascript", src="/views/js/trainingtime.js")
+					#ranking_status
+						#rankingtextFrame
+							img(id="ranking", src="/views/img/ranking.png", alt="ranking")
+							p(id="rankText") Client Ranking Score out of 100
+						#rankingprogressbar
+							p(class="clientname") client251
+							div(class="bar-holder")
+								div(class="rank", style="width:78%") 78
+							p(class="clientname") client164
+							div(class="bar-holder")
+								div(class="rank", style="width:68%") 68
+							p(class="clientname") client45
+							div(class="bar-holder")
+								div(class="rank", style="width:55%") 55
+							p(class="clientname") client152
+							div(class="bar-holder")
+								div(class="rank", style="width:52%") 52
+							p(class="clientname") client15
+							div(class="bar-holder")
+								div(class="rank", style="width:37%") 37
+							p(class="clientname") client2
+							div(class="bar-holder")
+								div(class="rank", style="width:36%") 36
+							p(class="clientname") client16
+							div(class="bar-holder")
+								div(class="rank", style="width:20%") 20
+							p(class="clientname") client224
+							div(class="bar-holder")
+								div(class="rank", style="width:16%") 16
+							p(class="clientname") client78
+							div(class="bar-holder")
+								div(class="rank", style="width:14%") 14
+							p(class="clientname") client114
+							div(class="bar-holder")
+								div(class="rank", style="width:11%") 11
+					#learning_reminder
+						img(id="reminder", src="/views/img/learning_reminder.png", alt="learning reminder")
+						p(id="learningreminderText") Learning Reminer
+						div(class="bar-holder")
+							img(id="progressbarimg", src="/views/img/progress_bike.png", alt="progressbar bike", style="left:60%;")
+							div(class="totalprogress", style="width: 70%") 70% 
+					#client_status
+
+					#start_time
+						img(id="starttime", src="/views/img/train_start.png", alt="training start time")
+						p(id="starttimeText") Learning Start Time Distribution
+						canvas(id="starttimebubble", style="height: 50px; width: 150px;")
+						script(type="text/javascript", src="/views/js/starttime.js")
