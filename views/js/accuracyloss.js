@@ -1,57 +1,87 @@
-var ALCanvas = document.getElementById("accuracylossline");
+var ALCanvas = document.getElementById("accuracyline");
+var LLCanvas = document.getElementById("lossline");
 
 Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 14;
 
+var acc_loss_round = document.getElementById("acc_loss_round").value.split(',');
+var acc_loss_acc = document.getElementById("acc_loss_acc").value.split(',');
+var acc_loss_loss = document.getElementById("acc_loss_loss").value.split(',');
+
 var ALData = {
-	labels: [1, 2, 3],
+	labels: acc_loss_round,
 	datasets: [{
-		label: 'accuracy (Left)',
-		data: [
-			56.54,
-			61.31,
-			76.43
-		],
+		label: 'accuracy',
+		data: acc_loss_acc,
 		borderColor: "rgba(255,201,14,1)",
 		backgroundColor: "rgba(255,201,14,0.5)",
 		fill: false,
-		yAxisID: 'y'
-	}, {
-		label: 'loss (Right)',
-		data: [
-			1.2,
-			0.94,
-			0.81
-		],
-		borderColor: "rgba(201,14,255,1)",
+	}]
+};
+var LLData = {
+	labels: acc_loss_round,
+	datasets: [{
+		label: 'loss',
+		data: acc_loss_loss,
+		borderCorlor: "rgba(201,14,255,1)",
 		backgroundColor: "rgba(201,14,255,0.5)",
-		fill: false,
-		yAxisID: 'y1'
+		fill: false
 	}]
 };
 
 var chartOptions = {
-	responsive: true,
+	responsive: false,
 	interaction: {
 		mode: 'index',
 		intersect: false
 	},
 	stacked: false,
 	scales: {
+		xAxes: [{
+			scaleLabel: {
+				display: true,
+				labelString: "Rounds"
+			}
+		}],
 		yAxes: [{
-			id: 'y',
 			type: 'linear',
 			display: true,
-			position: 'left'
-		}, {
-			id: 'y1',
-			type: 'linear',
-			display: true,
-			position: 'right'
+			position: 'left',
+			ticks: {
+				beginAtZero: true,
+				max: 1.0
+			}
 		}]
 	},
 	legend: {
-		position: 'top'
+		display: false
+	}
+}
+var losschartOptions = {
+	responsive: false,
+	interaction: {
+		model: 'index',
+		intersect: false
+	},
+	stacked: false,
+	scales: {
+		xAxes: [{
+			scaleLabel: {
+				display: true,
+				labelString: "Rounds"
+			}
+		}],
+		yAxes: [{
+			type: 'linear',
+			display: true,
+			position: 'left',
+			ticks: {
+				beginAtZero: true
+			}
+		}]
+	},
+	legend: {
+		display: false
 	}
 }
 
@@ -59,4 +89,10 @@ var lineChart = new Chart(ALCanvas, {
 	type: 'line',
 	data: ALData,
 	options: chartOptions
+});
+
+var lineChart2 = new Chart(LLCanvas, {
+	type: 'line',
+	data: LLData,
+	options: losschartOptions
 });
