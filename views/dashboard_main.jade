@@ -1,0 +1,145 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		link(rel="stylesheet", type="text/css", href="/views/css/navbar_style.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/dashboard/dashboard_style.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/dashboard/dashboard_style_progressbar.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/dashboard/learning_reminder.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/dashboard/client_selection.css")
+		script(src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0")
+		title FLDashboard
+	body
+		include ./side_navbar.jade
+		.content-container
+			.container-fluid
+				// Main component for a primary marketing message or call to action
+				.jumbotron
+					#now_status
+						#statusInfoFrame
+							img(id="server", src="/views/img/server.png", alt="federated learning server")
+							p(id="serverCount") 1
+							p(id="serverText") servers
+							img(id="client", src="/views/img/client.png", alt="federated learning client")
+							p(id="clientCount")= cCount
+							p(id="clientText") clients
+							img(id="round", src="/views/img/round.png", alt="federated learning round")
+							p(id="roundCount")= cRound
+							p(id="roundText") round
+						#nowstatusFrame
+							p(id="nstatusText") Now Training
+						#onstatusFrame
+							p(id="onText") ON
+							p(id="onCount")= ston
+					script(src="https://canvasjs.com/assets/script/canvasjs.min.js")
+					#data_status
+						#dataSizeFrame
+							img(id="datasize", src="/views/img/datasize.png", alt="learning data size")
+							p(id="datasizeCount")= dcc_ds
+							p(id="datasizeText") Data Size
+						#classSizeFrame
+							img(id="classsize", src="/views/img/classsize.png", alt="learning class size")
+							p(id="classsizeCount")= dcc_cs
+							p(id="classsizeText") Class Size
+						p(id="datasizeTextClass") Total Data Size / class
+						input(value=dcc_rcs, type="text", hidden="hidden", id="dcc_rcs")
+						input(value=dcc_cur, type="text", hidden="hidden", id="dcc_cur")
+						input(value=dcc_pre, type="text", hidden="hidden", id="dcc_pre")
+						input(value=mds, type="text", hidden="hidden", id="dcc_mds")
+						input(value=pds, type="text", hidden="hidden", id="dcc_pds")
+						input(value=ccr, type="text", hidden="hidden", id="ccr")
+						canvas(id="currdatasize", style="height: 50px; width: 70px")
+						span(id="cur_par_text") Participant Client
+						span(id="cur_par")= curpar
+						canvas(id="predatasize", style="height: 50px; width: 70px")
+						span(id="pre_par_text") Participant Client
+						span(id="pre_par")= prepar
+						script(type="text/javascript", src="/views/js/totaldatasize.js")
+					#train_status
+						#trainingResFrame
+							img(id="trainingres", src="/views/img/accuracy.png", alt="training accuracy")
+							p(id="trainingresText") Average
+							p(id="accCount")= acc
+							p(id="accText") Accuracy
+							p(id="lossCount")= loss
+							p(id="lossText") Loss
+						#trainingFrame
+							img(id="traintime", src="/views/img/time.png", alt="training training time")
+							p(id="timeavgText") Average
+							p(id="disTime")= Td
+							p(id="disText") Distribution Time
+							p(id="updateTime")= Tt
+							p(id="updateText") Update Time
+							p(id="uploadTime")= Tu
+							p(id="uploadText") Upload Time
+							p(id="aggTime")= Ta
+							p(id="aggText") Aggregation Time
+					#train_acc_loss
+						p(id="acclinetext") Accuracy
+						p(id="losslinetext") Loss
+						input(value=alc_round, type="text", hidden="hidden", id="acc_loss_round")
+						input(value=alc_acc, type="text", hidden="hidden", id="acc_loss_acc")
+						input(value=alc_loss, type="text", hidden="hidden", id="acc_loss_loss")
+						p(id="accuracyspan")
+							canvas(id="accuracyline", style="height: 18vh; width: 22vw")
+						p(id="lossspan")
+							canvas(id="lossline", style="height: 18vh; width: 22vw")
+						script(type="text/javascript", src="/views/js/accuracyloss.js")
+					#dsbyclient
+						p(id="dsbyclienttext") Data Size by Clients
+						input(value=dbc_class, type="text", hidden="hidden", id="dbc_class")
+						input(value=dbc_data, type="text", hidden="hidden", id="dbc_data")
+						canvas(id="clientdatasize", style="height: 23vh; width: 40vw")
+						script(type="text/javascript", src="/views/js/datasizebyclient.js")
+					#ranking_status
+						#rankingtextFrame
+							img(id="ranking", src="/views/img/ranking.png", alt="ranking")
+							p(id="rankText") Client Ranking
+						#rankingprogressbar
+							p(class="clientname") client251
+							div(class="bar-holder")
+								div(class="rank", style="width:78%") 78
+							p(class="clientname") client164
+							div(class="bar-holder")
+								div(class="rank", style="width:68%") 68
+							p(class="clientname") client45
+							div(class="bar-holder")
+								div(class="rank", style="width:55%") 55
+							p(class="clientname") client152
+							div(class="bar-holder")
+								div(class="rank", style="width:52%") 52
+							p(class="clientname") client15
+							div(class="bar-holder")
+								div(class="rank", style="width:37%") 37
+							p(class="clientname") client2
+							div(class="bar-holder")
+								div(class="rank", style="width:36%") 36
+							p(class="clientname") client16
+							div(class="bar-holder")
+								div(class="rank", style="width:20%") 20
+							p(class="clientname") client224
+							div(class="bar-holder")
+								div(class="rank", style="width:16%") 16
+							p(class="clientname") client78
+							div(class="bar-holder")
+								div(class="rank", style="width:14%") 14
+							p(class="clientname") client114
+							div(class="bar-holder")
+								div(class="rank", style="width:11%") 11
+					#learning_reminder
+						img(id="reminder", src="/views/img/learning_reminder.png", alt="learning reminder")
+						p(id="learningreminderText") Summary
+						div(class="progressbar-holder")
+							img(id="progressbarimg", src="/views/img/progress_bike.png", alt="progressbar bike", style="left:60%;")
+							div(class="totalprogress", style="width: 70%")=mcr
+
+					#training_time
+						p(id="ttime") Training Time
+						input(value=at_tt, type="text", hidden="hidden", id="at_tt")
+						input(value=at_ut, type="text", hidden="hidden", id="at_ut")
+						input(value=aggtime, type="text", hidden="hidden", id="aggtime")
+						input(value=distime, type="text", hidden="hidden", id="distime")
+						input(value=cbr, type="text", hidden="hidden", id="client_round_count")
+						canvas(id="Chart1", style="height: 12vh; width: 50vw")
+						canvas(id="othertime", style="height: 12vh; width: 50vw")
+						script(type="text/javascript", src="/views/js/test.js")

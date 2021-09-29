@@ -1,0 +1,29 @@
+{
+  "name": "fldashboard",
+  "version": "1.0.0",
+  "description": "Federated Learning Dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HwangDongJun/FLDashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HwangDongJun/FLDashboard/issues"
+  },
+  "homepage": "https://github.com/HwangDongJun/FLDashboard#readme",
+  "dependencies": {
+    "chart.js": "^3.5.1",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jade": "^1.11.0",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7",
+    "sqlite3": "^5.0.2",
+    "vue": "^2.6.14"
+  }
+}

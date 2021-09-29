@@ -1,0 +1,224 @@
+div#learning_reminder {
+	position: absolute;
+	width: 370px;
+	height: 452px;
+	left: 247px;
+	top: 820px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+img#reminder {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 52px;
+	top: 31px;
+}
+p#learningreminderText {
+	position: absolute;
+	left: 119px;
+	top: 24px;
+	
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 21px;
+}
+img#progressbarimg {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	bottom: 10px;
+}
+.progressbar-holder {
+	width: 80%;
+	background-color: rgb(231, 231, 231);
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	margin: 0 auto;
+	position: relative;
+	top: 120px;
+}
+.totalprogress {
+	background-color: rgb(22, 21, 21);
+	color: #E5E5E5;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	text-align: center;
+}
+
+
+div#client_status {
+	position: absolute;
+	width: 563px;
+	height: 609px;
+	left: 847px;
+	top: 663px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+
+div#training_time {
+	position: absolute;
+	width: 1420px;
+	height: 407px;
+	left: 1090px;
+	top: 520px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+p#ttime {
+	position: absolute;
+	left: 640px;
+	font-size: 22px;
+}
+canvas#Chart1 {
+	position: absolute;
+	top: 72px;
+	left: 60px;
+}
+canvas#othertime {
+	position: absolute;
+	top: 232px;
+	left: 54px;
+}
+
+img#traintime {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 358px;
+	top: 48px;
+}
+p#TrainingtimeText {
+	position: absolute;
+	left: 104px;
+	top: 14px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+canvas#trainingtimeline {
+	position: absolute;
+	top: 100px;
+	width: 100px;
+	height: 400px;
+}
+
+p#timeavgText {
+	position: absolute;
+	left: 400px;
+	top: 70px;
+}
+
+p#disTime {
+	position: absolute;
+	left: 480px;
+	top: 4px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+p#disText {
+	position: absolute;
+	left: 490px;
+	top: 44px;
+
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+}
+
+p#updateTime {
+	position: absolute;
+	left: 650px;
+	top: 4px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+p#updateText {
+	position: absolute;
+	left: 670px;
+	top: 44px;
+
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+}
+
+p#uploadTime {
+	position: absolute;
+	left: 480px;
+	top: 54px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+p#uploadText {
+	position: absolute;
+	left: 500px;
+	top: 94px;
+
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+}
+
+p#aggTime {
+	position: absolute;
+	left: 650px;
+	top: 54px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+p#aggText {
+	position: absolute;
+	left: 660px;
+	top: 94px;
+
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+}

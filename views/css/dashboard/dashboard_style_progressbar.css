@@ -1,0 +1,64 @@
+div#ranking_status {
+	position: absolute;
+	width: 370px;
+	height: 495px;
+	left: 247px;
+	top: 303px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+img#ranking {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 52px;
+	top: 31px;
+}
+p#rankText {
+	position: absolute;
+	width: 331px;
+	height: 21px;
+	left: 119px;
+	top: 24px;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 21px;
+}
+
+.bar-holder {
+  width: 60%;
+  background-color: rgb(231, 231, 231);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin: 0 auto;
+  position: relative;
+  left: 40px;
+  top: 100px;
+}
+
+/* INDIVIDUAL BAR'S STYLING, SAME GOES WITH OTHER BARS */
+.rank {
+  background-color: rgb(22, 21, 21);
+  color: #E5E5E5;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.clientname {
+  display: inline;
+  position: relative;
+  left: 60px;
+  top: 120px;
+}

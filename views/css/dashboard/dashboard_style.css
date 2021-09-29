@@ -1,0 +1,436 @@
+div#now_status {
+	position: absolute;
+	width: 370px;
+	height: 258px;
+	left: 247px;
+	top: 23px;
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+div#statusInfoFrame {
+	display: flex; 
+}
+img#server, img#client, img#round {
+	top: 30px;
+	width: 48px;
+	height: 48px;
+	position: relative;
+}
+img#server {
+	left: 40px;
+}
+p#serverCount, p#clientCount, p#roundCount {
+	font: bold;
+	font-size: 30px;
+	text-align: center;
+	position: relative;
+}
+p#serverCount {
+	left: 8px;
+	top: 60px;
+}
+p#serverText, p#clientText, p#roundText {
+	color: #7B7B7B;
+	font-size: 12px;
+	position: relative;
+}
+p#serverText {
+	right: 16px;
+	top: 110px;
+}
+img#client {
+	left: 46px;
+}
+p#clientCount {
+	left: 10px;
+	top: 58px;
+}
+p#clientText {
+	right: 13px;
+	top: 110px;
+}
+img#round {
+	left: 56px;
+}
+p#roundCount {
+	left: 24px;
+	top: 54px;
+}
+p#roundText {
+	left: 2px;
+	top: 110px;
+}
+
+p#nstatusText {
+	font: bold;
+	font-size: 18px;
+	text-align: left;
+	position: relative;
+	left: 30px;
+	top: 34px;
+}
+div#onstatusFrame, div#offstatusFrame {
+	width: 245px;
+	height: 49px;
+	border-radius: 30px;
+	position: relative;
+}
+div#onstatusFrame {
+	background-color: #B0EDA6;
+	left: 60px;
+	top: 30px;
+}
+div#offstatusFrame {
+	background-color: #EDAEA6;
+	left: 270px;
+	bottom: 46px;
+}
+p#onText, p#offText {
+	font: bold;
+	font-size: 26px;
+	position: relative;
+	top: 8px;
+	left: 30px;
+}
+p#onCount, p#offCount {
+	font: bold;
+	font-size: 24px;
+	position: relative;
+	left: 40px;
+	text-align: center;
+	bottom: 46px;
+}
+
+div#data_status {
+	position: absolute;
+	width: 415px;
+	height: 1248px;
+	left: 647px;
+	top: 23px;
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+div#dataSizeFrame {
+	position: absolute;
+	width: 163px;
+	height: 126px;
+	left: 46px;
+	top: 15px;
+}
+img#datasize {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 38px;
+	top: 12px;
+}
+p#datasizeCount {
+	position: absolute;
+	width: 75px;
+	height: 37px;
+	left: 24px;
+	top: 36px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	
+	text-align: center;
+	letter-spacing: 0.4px;
+}
+p#datasizeText {
+	position: absolute;
+	width: 75px;
+	height: 37px;
+	left: 24px;
+	top: 80px;
+	
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+}
+div#classSizeFrame {
+	position: absolute;
+	width: 163px;
+	height: 126px;
+	left: 206px;
+	top: 15px;
+}
+img#classsize {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 57px;
+	top: 12px;
+}
+p#classsizeCount {
+	position: absolute;
+	width: 59px;
+	height: 37px;
+	left: 52px;
+	top: 36px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+p#classsizeText {
+	position: absolute;
+	width: 59px;
+	height: 37px;
+	left: 52px;
+	top: 80px;
+	
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+}
+p#datasizeTextClass {
+	position: absolute;
+	width: 223px;
+	height: 10px;
+	left: 25px;
+	top: 149px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 10px;
+}
+canvas#currdatasize {
+	position: absolute;
+	top: 199px;
+	left: 50px;
+}
+canvas#predatasize {
+	position: absolute;
+	top: 529px;
+	left: 50px;
+}
+span#cur_par {
+	position: absolute;
+	top: 340px;
+	left: 60px;
+	font-size: 30px;
+}
+span#cur_par_text {
+	position: absolute;
+	top: 320px;
+	left: 20px;
+	font-size: 14px;
+	color: #7B7B7B;
+}
+span#pre_par {
+	position: absolute;
+	top: 672px;
+	left: 60px;
+	font-size: 30px;
+}
+span#pre_par_text {
+	position: absolute;
+	left: 20px;
+	top: 652px;
+	font-size: 14px;
+	color: #7B7B7B;
+}
+
+canvas#clientdatasize {
+	position: absolute;
+	top: 45px;
+	left: 200px;
+}
+
+div#train_status {
+	position: absolute;
+	width: 845px;
+	height: 164px;
+	left: 1090px;
+	top: 23px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+div#clientRoundFrame {
+	position: absolute;
+	width: 206px;
+	height: 126px;
+	left: 171px;
+	top: 20px;
+}
+img#clientsbyroundres {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 10px;
+	top: 7px;
+}
+p#clientbyroundText {
+	position: absolute;
+	width: 46px;
+	height: 15px;
+	left: 62px;
+	top: 20px;
+}
+p#clientbyCount {
+	position: absolute;
+	left: 30px;
+	top: 36px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+	text-align: center;
+}
+p#clientbyText {
+	position: absolute;
+	left: 10px;
+	top: 80px;
+	
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;	
+}
+div#trainingResFrame {
+	position: absolute;
+	width: 253px;
+	height: 179px;
+	left: 58px;
+	top: 20px;
+}
+img#trainingres {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 20px;
+	top: 27px;
+}
+p#trainingresText {
+	position: absolute;
+	left: 60px;
+	top: 36px;
+}
+p#accCount {
+	position: absolute;
+	left: 140px;
+	bottom: 116px;
+	
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+}
+p#accText {
+	position: absolute;
+	left: 160px;
+	bottom: 110px;
+
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+}
+p#lossCount {
+	position: absolute;
+	left: 165px;
+	top: 40px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 15px;
+}
+p#lossText {
+	position: absolute;
+	left: 172px;
+	top: 80px;
+	
+	color: #7B7B7B;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+}
+
+div#train_acc_loss {
+	position: absolute;
+	width: 1420px;
+	height: 300px;
+	left: 1090px;
+	top: 207px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+p#acclinetext {
+	position: absolute;
+	left: 300px;
+	top: 1px;
+	font-size: 22px;
+}
+p#losslinetext {
+	position: absolute;
+	left: 1050px;
+	top: 1px;
+	font-size: 22px;
+}
+
+p#accuracyspan {
+	position: absolute;
+	top: 40px;
+	left: 60px;
+	height: 340px;
+	width: 600px;
+}
+p#lossspan {
+	position: absolute;
+	left: 760px;
+	top: 40px;
+	height: 340px;
+	width: 600px;
+}
+p#clientroundlinetext {
+	position: absolute;
+	left: 25px;
+	top: 460px;
+	font-size: 22px;
+}
+canvas#clientroundline {
+	position: absolute;
+	top: 530px;
+}
+
+div#dsbyclient {
+	position: absolute;
+	width: 1420px;
+	height: 340px;
+	left: 1090px;
+	top: 940px;
+
+	border: 1px solid #656363;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+p#dsbyclienttext {
+	position: absolute;
+	left: 640px;
+	font-size: 22px;	
+}
