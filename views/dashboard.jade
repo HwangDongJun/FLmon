@@ -1,0 +1,131 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		link(rel="stylesheet", type="text/css", href="/views/css/navbar_style.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/charts.css")
+		link(rel="stylesheet", type="text/css", href="/views/css/check_box.css")
+		script(src="https://code.highcharts.com/highcharts.js")
+		script(src="https://code.highcharts.com/highcharts-more.js")
+		script(src="https://code.highcharts.com/modules/solid-gauge.js")
+		script(src="https://code.highcharts.com/modules/series-label.js")
+		script(src="https://code.highcharts.com/modules/exporting.js")
+		script(src="https://code.highcharts.com/modules/export-data.js")
+		script(src="https://code.highcharts.com/modules/accessibility.js")
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+		title FLDashboard
+	body
+		include ./side_navbar.jade
+		.content-container
+			.container-fluid
+				// Main component for a primary marketing message or call to action
+				.jumbotron
+					input(value=reData, type="text", hidden="hidden", id="re_data")
+					input(value=reDataForcs, type="text", hidden="hidden", id="re_data_for_cs")
+					#summary
+						div(id="summary_title")
+							span(id="sum_text") Summary
+						div(id="summary_curr") Currant Round
+							p(id="curround")= curr
+							p(id="rou_text") round
+						div(id="summary_curracc") Accuracy
+							p(id="curacc")= curracc
+							p(id="per") %
+						div(id="hetero") Heterogeneous Data Class
+							p(id="class_text") class
+							p(id="hetero_class")= rmin_entropy
+						div(id="ltime") Learning Time
+							p(id="ltime_text")= rltime
+							p(id="sec") s
+						div(id="cpu_usage") CPU Usage
+							p(id="cpu_text")= rcpu
+							p(id="cper") %
+					#client_ranking
+						div(id="cr_title")
+							span(id="cr_text") Client Ranking
+						p(id="ranking_table")
+							table(border="1", id="ranktable")
+								tr(id="tr1")
+									th # Rank
+									th Clientid
+									th Contribution
+								each val, index in rank_index
+									if index % 2 == 0
+										tr(class="even")
+											th= index+1
+											th= rank_index[index]
+											th= rank_val[index]
+									else
+										tr(class="odd")
+											th= index+1
+											th= rank_index[index]
+											th= rank_val[index]
+					#manage_resource
+						div(id="current_manage")
+							span(id="cmr_text") Client Selection Criteria (Problem)
+						div(class="checks etrans")
+							input(type="checkbox", id="overfitting", name="dashboardcriterion", value="overfitting")
+							label(for="overfitting", id="acclabel") Loss (Overfitting)
+						div(class="checks etrans")
+							input(type="checkbox", id="hete", name="dashboardcriterion", value="hete")
+							label(for="hete", id="hete") Entropy (Heterogeneous Data)
+							input(type="text", id="acc_class", name="accuracy_class", placeholder="Input the class you want to keep (e.g. 0,1)")
+						hr
+						div(class="checks etrans")
+							input(type="checkbox", id="time", name="dashboardcriterion", value="time")
+							label(for="time") Learning Elapsed Time (Long Time)
+						hr
+						div(class="checks etrans")
+							input(type="checkbox", id="abnormal", name="dashboardcriterion", value="abnormal")
+							label(for="abnormal", id="abnormal") Wrong Predictions (Abnormal Data)
+							input(type="text", id="predicition", name="predicition_text", placeholder="Input predicition probability, round baseline")
+						button(id="submit_button", onclick="_submit()") Check!
+						input(value=curr, type="text", hidden="hidden", id="curr")
+						script(type="text/javascript", src="/views/cs_js/test.js")
+					figure(class="highcharts-figure")
+						div(id="round_clients_title") Learning Engagement Client by round
+						div(id="round_clients")
+						input(value=cci_round, type="text", hidden="hidden", id="cci_round")
+						input(value=cci_client, type="text", hidden="hidden", id="cci_client")
+						script(type="text/javascript", src="/views/cs_js/round_client.js")
+					figure(class="highcharts-figure")
+						div(id="accuracy_back")
+						div(id="accuracy_title") Global Model Accuracy by round
+						div(id="accuracy_chart")
+						div(id="loss_title") Global Model Loss by round
+						div(id="loss_chart")
+						input(value=abdData_box, type="text", hidden="hidden", id="adb_data_box")
+						input(value=abdData_out, type="text", hidden="hidden", id="adb_data_out")
+						input(value=lbdData_box, type="text", hidden="hidden", id="ldb_data_box")
+						input(value=lbdData_out, type="text", hidden="hidden", id="ldb_data_out")
+						input(value=acq, type="text", hidden="hidden", id="acq")
+						input(value=ld, type="text", hidden="hidden", id="ld")
+						input(value=tld, type="text", hidden="hidden", id="tld")
+						script(type="text/javascript", src="/views/cs_js/accuracy_line_plot.js")
+						script(type="text/javascript", src="/views/cs_js/loss_line_plot.js")
+					figure(class="highcharts-figure")
+						div(id="entropy_back")
+						div(id="entropy_title") Client Class Distribution(Entropy) by round
+						div(id="entropy_chart")
+						script(type="text/javascript", src="/views/cs_js/entropy_line.js")
+					figure(class="highcharts-figure")
+						div(id="class_data_back")
+						div(id="class_data_back_two")
+						div(id="class_data_title") Number of Clients with a Class Data
+						div(id="class_data")
+						input(value=gcdata, type="text", hidden="hidden", id="gcdata")
+						script(type="text/javascript", src="/views/cs_js/class_data_3d.js")
+					figure(class="highcharts-figure")
+						div(id="learningtime_back")
+						div(id="learningtime_title") Learning Elapsed Time by round (s)
+						div(id="learningtime_chart")
+						input(value=ttc, type="text", hidden="hidden", id="ttc")
+						input(value=utc, type="text", hidden="hidden", id="utc")
+						input(value=stl, type="text", hidden="hidden", id="stl")
+						script(type="text/javascript", src="/views/cs_js/learningtime_stackedbar.js")
+					figure(class='highcharts-figure')
+						div(id="predict_title") Wrong Predictions Probability by round
+						div(id="predict_chart")
+						input(value=prdata, type="text", hidden="hidden", id="prdata")
+						input(value=prrounddata, type="text", hidden="hidden", id="prrounddata")
+						script(type="text/javascript", src="/views/cs_js/predictions.js")
