@@ -56,8 +56,8 @@ CREATE TABLE Predictions (
 |Data|Data Type|Database-Table|Description|
 |:--:|:--:|:--:|:--:|
 |client name|string|index-ClientID|Client name participating in learning.|
-|data size|int32|learning-LearningTrain|Data size by class.|
-|class size|int32|learning-LearningTrain|Class size by round.|
+|data size|int32|learning-LearningRound|Data size by class.|
+|class size|int32|learning-LearningRound|Class size by round.|
 |test accuracy|float|learning-LearningTrain|Model test accuracy.|
 |test loss|float|learning-LearningTrain|Model test loss.|
 |train loss|float|learning-LearningTrain|Model train loss.|
