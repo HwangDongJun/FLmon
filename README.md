@@ -52,6 +52,7 @@ CREATE TABLE Predictions (
 
 ## Client Data for Performance Monitoring
 - Description of the data to be stored in the database.
+
 |Data|Data Type|Database-Table|Description|
 |:--:|:--:|:--:|:--:|
 |client name|string|index-ClientID|Client name participating in learning.|
