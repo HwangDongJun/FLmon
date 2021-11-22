@@ -1,0 +1,353 @@
+body {margin: 10px;}
+.where {
+  display: block;
+  margin: 25px 15px;
+  font-size: 11px;
+  color: #000;
+  text-decoration: none;
+  font-family: verdana;
+  font-style: italic;
+}
+
+.checks {position: relative;}
+
+.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0
+}
+.checks input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+  content: ' ';
+  display: inline-block;
+  width: 21px;  /* 체크박스의 너비를 지정 */
+  height: 21px;  /* 체크박스의 높이를 지정 */
+  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  margin: -2px 8px 0 0;
+  text-align: center; 
+  vertical-align: middle;
+  background: #fafafa;
+  border: 1px solid #cacece;
+  border-radius : 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+}
+.checks input[type="checkbox"] + label:active:before,
+.checks input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.checks input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */ 
+  content: '\2714';  /* 체크표시 유니코드 사용 */
+  color: #99a1a7;
+  text-shadow: 1px 1px #fff;
+  background: #e9ecee;
+  border-color: #adb8c0;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+
+.checks.etrans input[type="checkbox"] + label {
+  padding-left: 30px;
+}
+.checks.etrans input[type="checkbox"] + label:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  opacity: .6;
+  box-shadow: none;
+  border-color: #6cc0e5;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+.checks.etrans input[type="checkbox"]:checked + label:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity:1; 
+  background: transparent;
+  border-color:transparent #6cc0e5 #6cc0e5 transparent;
+  border-top-color:transparent;
+  border-left-color:transparent;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+
+.no-csstransforms .checks.etrans input[type="checkbox"]:checked + label:before {
+  /*content:"\2713";*/
+  content: "\2714";
+  top: 0;
+  left: 0;
+  width: 21px;
+  line-height: 21px;
+  color: #6cc0e5;
+  text-align: center;
+  border: 1px solid #6cc0e5;
+}
+
+.checks.etrans {
+	margin-top: 14px;
+	margin-bottom: 14px;
+}
+label {
+	margin-right: 10px;
+}
+
+#summary {
+	position: absolute;
+	top: 100px;
+	left: 700px;
+	border: solid 2px;
+	border-radius: 4px;
+	border-color: #4CC671;
+	width: 293.28px;
+	height: 300px;
+}
+#sum_text {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	font-size: 20px;
+}
+#summary_curr {
+	position: absolute;
+	top: 70px;
+	left: 20px;
+	font-size: 18px;
+}
+#curround {
+	position: absolute;
+	top: -26px;
+	left: 140px;
+	font-size: 22px;
+}
+#rou_text {
+	position: absolute;
+	top: -26px;
+	left: 180px;
+	font-size: 22px;
+}
+#summary_curracc {
+	position: absolute;
+	top: 110px;
+	left: 20px;
+	font-size: 18px;
+}
+#curacc {
+	position: absolute;
+	top: -26px;
+	left: 140px;
+	font-size: 22px;
+}
+#acc_class {
+	width: 260px;
+}
+#per {
+	position: absolute;
+	top: -26px;
+	left: 194px;
+	font-size: 22px;
+}
+#hetero {
+	position: absolute;
+	top: 150px;
+	left: 20px;
+	font-size: 18px;
+}
+#class_text {
+	position: absolute;
+	top: 6px;
+	left: 160px;
+	font-size: 22px;
+}
+#hetero_class {
+	position: absolute;
+	top: 6px;
+	left: 140px;
+	font-size: 22px;
+}
+#ltime {
+	position: absolute;
+	top: 220px;
+	left: 20px;
+	font-size: 18px;
+}
+#ltime_text {
+	position: absolute;
+	top: -26px;
+	left: 140px;
+	font-size: 22px;
+}
+#sec {
+	position: absolute;
+	top: -26px;
+	left: 190px;
+	font-size: 22px;
+}
+#cpu_usage {
+	position: absolute;
+	top: 260px;
+	left: 20px;
+	font-size: 18px;
+}
+#cpu_text {
+	position: absolute;
+	top: -26px;
+	left: 140px;
+	font-size: 22px;
+}
+#cper {
+	position: absolute;
+	top: -26px;
+	left: 170px;
+	font-size: 22px;
+}
+
+#client_ranking {
+	position: absolute;
+	top: 460px;
+	left: 700px;
+	border: solid 2px;
+	border-radius: 4px;
+	border-color: #4C85C6;
+	width: 293.28px;
+	height: 300px;
+}
+#cr_text {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	font-size: 20px;
+}
+
+#manage_resource {
+	position: absolute;
+	top: 820px;
+	left: 700px;
+	border: solid 2px;
+	border-radius: 4px;
+	padding: 14px 10px 84px 14px;
+	border-color: #B576C5;
+	height: 240px;
+	width: 270px;
+}
+
+button#submit_button {
+	position: absolute;
+	top: 280px;
+	left: 70px;
+	border-radius: 20px;
+	width: 150px;
+	height: 40px;
+	background-color: #B576C5;
+	border: 0px;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+}
+button#submit_button:active {
+	box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
+	position: absolute;
+	left: 70px;
+	top: 280px;
+}
+
+
+#cmr_text {
+	font-size: 17px;
+}
+#cmr_board {
+	border: solid 1px;
+	border-radius: 4px;
+	width: 700px;
+	height: 30px;
+	padding: 10px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.criterion {
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+#tr1 {
+	border: 3px solid black;
+	border-left: 0px;
+	border-right: 0px;
+	background-color: #4A84CD;
+	color: white;
+}
+#ranktable {
+	position: absolute;
+	top: 50px;
+	left: 8px;
+	width: 280px;
+	border: 1px solid gray;
+	border-collapse: collapse;
+	border-left: 0px;
+	border-right: 0px;
+}
+.odd {
+	background-color: #E4E8ED;
+}
+
+#iot_responsetime {
+	position: absolute;
+	top: 980px;
+	left: 700px;
+	border: solid 2px;
+	border-radius: 4px;
+	border-color: #30B4A6;
+	height: 300px;
+	width: 293.28px;
+}
+
+#control_board {
+	position: absolute;
+	top: 10px;
+	left: 30px;
+}
+
+#responsetime {
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	width: 260px;
+	height: 250px;
+}
+
+#predicition {
+	width: 260px;
+}
+
+label {
+	font-size: 15px;
+}
+
+#hete {
+	margin-bottom: 10px;
+}
+#abnormal {
+	margin-bottom: 10px;
+}

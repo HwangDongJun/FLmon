@@ -1,0 +1,210 @@
+#resource_title {
+	position: absolute;
+	left: 1050px;
+	top: 160px;
+	z-index: 1;
+}
+#resource_line {
+	position: absolute;
+	left: 1200px;
+	top: 160px;
+	width: 1300px;
+	border: solid 1px black;
+	z-index: 1;
+}
+
+#accuracy_back {
+	width: 1500px;
+	height: 640px;
+	position: absolute;
+	left: 1000px;
+	top: 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+	z-index: -1;
+}
+#accuracy_title {
+	position: absolute;
+	left: 1040px;
+	top: 30px;
+	font-size: 16px;
+}
+#accuracy_chart {
+	width: 1450px;
+	height: 200px;
+	position: absolute;
+	left: 1020px;
+	top: 54px;
+	z-index: 0;
+}
+#loss_back {
+	width: 100px;
+	height: 0px;
+	position: absolute;
+	left: 1700px;
+	top: 11430px;
+	border: 0.5px solid gray;
+	border-radius: 10px;
+	z-index: 2;
+}
+#loss_title {
+	position: absolute;
+	left: 1040px;
+	top: 250px;
+	font-size: 16px;
+}
+#loss_chart {
+	width: 1450px;
+	height: 200px;
+	position: absolute;
+	left: 1020px;
+	top: 274px;
+}
+
+#entropy_back {
+	width: 1500px;
+	height: 260px;
+	position: absolute;
+	left: 1000px;
+	top: 660px;
+	border: 0.5px solid black;
+	border-radius: 10px;
+	z-index: 1;
+}
+#entropy_title {
+	position: absolute;
+	left: 1040px;
+	top: 680px;
+	font-size: 16px;
+	z-index: 3;
+}
+#entropy_chart {
+	width: 1450px;
+	height: 240px;
+	position: absolute;
+	left: 1030px;
+	top: 676px;
+	z-index: 2;
+}
+#information_chart {
+	width: 750px;
+	height: 350px;
+	position: absolute;
+	left: 1750px;
+	top: 1004px;
+}
+
+#class_data_back {
+	width: 493px;
+	height: 350px;
+	position: absolute;
+	left: 1510px;
+	top: 930px;
+	border: 1px solid black;
+	border-radius: 10px;
+	z-index: 1;
+}
+#class_data_back_two {
+	width: 493px;
+	height: 350px;
+	position: absolute;
+	left: 2010px;
+	top: 930px;
+	border: 1px solid black;
+	border-radius: 10px;
+	z-index: 1;
+}
+#class_data_title {
+	position: absolute;
+	left: 2060px;
+	top: 950px;
+	font-size: 18px;
+}
+#class_data {
+	width: 400px;
+	height: 290px;
+	position: absolute;
+	left: 2060px;
+	top: 986px;
+	z-index: 2;
+}
+
+#learningtime_back {
+	width: 503px;
+	height: 350px;
+	position: absolute;
+	left: 1000px;
+	top: 930px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+#learningtime_title {
+	position: absolute;
+	left: 1040px;
+	top: 950px;
+	font-size: 18px;
+}
+#learningtime_chart {
+	width: 490px;
+	height: 290px;
+	position: absolute;
+	left: 1010px;
+	top: 990px;
+}
+
+#cpu_ram_back {
+	width: 493px;
+	height: 350px;
+	position: absolute;
+	left: 2010px;
+	top: 930px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+#cpu_ram_chart {
+	width: 750px;
+	height: 350px;
+	position: absolute;
+	left: 1750px;
+	top: 1930px;
+}
+
+#round_back {
+	width: 100px;
+	height: 0px;
+	position: absolute;
+	left: 1700px;
+	top: 11264px;
+	border: 0.5px solid gray;
+	border-radius: 10px;
+	z-index: 2;
+}
+#round_clients {
+	width: 1450px;
+	height: 150px;
+	position: absolute;
+	left: 1020px;
+	top: 500px;
+}
+#round_clients_title {
+	position: absolute;
+	left: 1040px;
+	top: 474px;
+	font-size: 16px;
+	z-index: 2;
+}
+
+#predict_title {
+	position: absolute;
+	left: 1550px;
+	top: 950px;
+	font-size: 18px;
+}
+#predict_chart {
+	width: 480px;
+	height: 290px;
+	position: absolute;
+	left: 1520px;
+	top: 990px;
+	z-index: 2;
+}
