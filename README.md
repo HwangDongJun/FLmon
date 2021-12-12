@@ -4,6 +4,13 @@ This dashboard was created to monitor and directly manage the performance of fed
 Information required for the dashboard is stored and used in the ```sqlite3``` database, indicating that it is still an early version. <br>
 The dashboard communicates with the user's federated learning server using the``` gRPC communication protocol```.
 
+## How to use
+1. Performance database creation. (same environment as user's FL server)
+2. Insert performance data into database.
+3. Run ```server/FLmonServer.py``` (same environment as user's FL server)
+4. Run ```index.js``` (desired FLmon environment)
+5. Start federated learning!
+
 ## Location
 - FLmon is <b>located in the different environment as user's federated learning server</b> and is a tool for federated learning users.
 
