@@ -93,6 +93,6 @@ CREATE TABLE SelectionClient (
 ![FLmon_dashbaord](img/FLmon_dashboard.png)
 
 ## References to federated learning
-- ![Federated Learning (gRPC)](https://github.com/HwangDongJun/FederatedLearning-gRPC)
-- ![Federated Learning (WebSocket)](https://github.com/HwangDongJun/Federated_Learning_using_Websockets)
-- ![Federated Learning (DL4J - mobile)](https://github.com/HwangDongJun/FederatedLearning-mobile_client)
+- [Federated Learning (gRPC)](https://github.com/HwangDongJun/FederatedLearning-gRPC)
+- [Federated Learning (WebSocket)](https://github.com/HwangDongJun/Federated_Learning_using_Websockets)
+- [Federated Learning (DL4J - mobile)](https://github.com/HwangDongJun/FederatedLearning-mobile_client)
