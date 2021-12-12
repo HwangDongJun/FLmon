@@ -1,10 +1,11 @@
-# FLDashboard
-Federated Learning Dashboard (FLDashboard). <br>
+# FLmon
+Federated Learning Management & Management Dashboard (FLmon). <br>
 This dashboard was created to monitor and directly manage the performance of federated learning models. <br>
 Information required for the dashboard is stored and used in the ```sqlite3``` database, indicating that it is still an early version. <br>
+The dashboard communicates with the user's federated learning server using the``` gRPC communication protocol```.
 
 ## Location
-- FLDashboard is <b>located in the same environment as the server</b> and is a tool for federated learning administrators.
+- FLmon is <b>located in the different environment as user's federated learning server</b> and is a tool for federated learning users.
 
 ## Database
 - index.db (Save the unique name of the client participating in federated learning by matching the index.)
@@ -48,6 +49,9 @@ CREATE TABLE Predictions (
     round INTEGER NOT NULL,
     clientid INTEGER NOT NULL,
     prediction REAL NOT NULL);
+CREATE TABLE SelectionClient (
+    round INTEGER NOT NULL,
+    remove_client TEXT NOT NULL);
 ```
 
 ## Client Data for Performance Monitoring
