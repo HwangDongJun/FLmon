@@ -9,7 +9,7 @@ The dashboard communicates with the user's federated learning server using the``
 2. Insert performance data into database.
 3. Run ```server/FLmonServer.py``` (same environment as user's FL server)
 4. Run ```index.js``` (desired FLmon environment)
-5. Start federated learning!
+5. Start federated learning! 
 
 ## Location
 - FLmon is <b>located in the different environment as user's federated learning server</b> and is a tool for federated learning users.
@@ -87,7 +87,12 @@ CREATE TABLE SelectionClient (
 |Data|Data Type|Database-Table|Description|
 |:--:|:--:|:--:|:--:|
 |round|string|learning-SelectionClient|Current study round.|
-|remove client|string|List of clients to exclude from training.|
+|remove client|string|learning-SelectionClient|List of clients to exclude from training.|
 
 ## Performance Monitoring Interface
 ![FLmon_dashbaord](img/FLmon_dashboard.png)
+
+## References to federated learning
+- ![Federated Learning (gRPC)](https://github.com/HwangDongJun/FederatedLearning-gRPC)
+- ![Federated Learning (WebSocket)](https://github.com/HwangDongJun/Federated_Learning_using_Websockets)
+- ![Federated Learning (DL4J - mobile)](https://github.com/HwangDongJun/FederatedLearning-mobile_client)
