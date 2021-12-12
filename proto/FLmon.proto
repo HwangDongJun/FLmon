@@ -1,0 +1,77 @@
+syntax="proto3";
+
+service FLmon {
+    rpc transportFLmon(FLmonRequest) returns (FLmonResponse) {}
+}
+
+// message MonitoringReq {
+//     string type = 1; // monitoring type: MIT
+// }
+
+// message ManagementReq {
+//     string type = 1; // management type: MAT
+// }
+
+// message FLmonRequest {
+//     oneof request_oneof {
+//         MonitoringReq monitoring_req = 1;
+//         ManagementReq management_req = 2;
+//     }
+// }
+
+message FLmonRequest {
+    int32 type = 1; // monitoring type: 1
+}
+
+message FLmonRequestManagement {
+    int32 type = 1; // management type: 2
+    int32 cri = 2;
+    optional string acc_class = 3;
+    optional string rou_pred = 4;
+}
+
+// message MonitoringRep {
+//     map<string, Scalar> config = 1;
+// }
+
+// message ManagementRep {
+//     map<string, Scalar> config = 1;
+// }
+
+// message FLmonResponse {
+//     oneof response_oneof {
+//         MonitoringRep monitoring_rep = 1;
+//         ManagementRep management_rep = 2;
+//     }
+
+message FLmonResponse {
+    // map<string, Scalar> config = 1;
+    string acc = 1;
+    string tel = 2;
+    string trl = 3;
+    string rou = 4;
+    string clc = 5;
+    string ent = 6;
+    string trt = 7;
+    string upt = 8;
+    string dit = 9;
+    string agt = 10;
+    string cld = 11;
+    string pre = 12;
+    string sul = 13;
+    string crl = 14;
+}
+
+message FLmonResponseManagement {
+    
+}
+
+// message Scalar {
+//     oneof scalar {
+//         double scdouble = 1;
+//         float scfloat = 2;
+//         int32 scint32 = 3;
+//         string scstring = 4;
+//         bool scbool = 5;
+//     }
+// }

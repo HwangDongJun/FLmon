@@ -7,6 +7,8 @@ The dashboard communicates with the user's federated learning server using the``
 ## Location
 - FLmon is <b>located in the different environment as user's federated learning server</b> and is a tool for federated learning users.
 
+![FLmon-design](img/dashboard_design.png)
+
 ## Database
 - index.db (Save the unique name of the client participating in federated learning by matching the index.)
 ```
@@ -26,11 +28,6 @@ CREATE TABLE LearningTime (
     clientid INTEGER NOT NULL,
     uploadstarttime REAL NOT NULL,
     uploadendtime REAL NOT NULL);
-CREATE TABLE CPURAMMonitoring (
-    round INTEGER NOT NULL,
-    clientid INTEGER NOT NULL,
-    cpu REAL NOT NULL,
-    ram REAL NOT NULL);
 CREATE TABLE DistributionTime (
     round INTEGER NOT NULL,
     clientid INTEGER NOT NULL,
@@ -56,6 +53,7 @@ CREATE TABLE SelectionClient (
 
 ## Client Data for Performance Monitoring
 - Description of the data to be stored in the database.
+- FLmon server-side gRPC server transmits performance data to FLmon server-side gPRC server at the request of FLmon server.
 
 |Data|Data Type|Database-Table|Description|
 |:--:|:--:|:--:|:--:|
@@ -71,5 +69,18 @@ CREATE TABLE SelectionClient (
 |update time|float|learning-LearningTrain|Model training time.|
 |distribution time|float|learning-DistributionTime|Model distribution time.|
 
+## Performance Management by Client Selection Method
+- Manage performance data for the purpose of resolving 4 anomalies.
+	- Overfitting Problem
+	- Heterogeneous Data Problem
+	- Long Training Time Problem
+	- Anomaly Data Problem
+- Select client from FLmon server and forward to FL server side gRPC server.
+
+|Data|Data Type|Database-Table|Description|
+|:--:|:--:|:--:|:--:|
+|round|string|learning-SelectionClient|Current study round.|
+|remove client|string|List of clients to exclude from training.|
+
 ## Performance Monitoring Interface
-![FLDashboard](img/FLDashboard.png)
+![FLmon_dashbaord](img/FLmon_dashboard.png)

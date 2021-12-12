@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 var idb = new sqlite3.Database("../FederatedLearning-gRPC/server/dashboard_db/index.db", sqlite3.OPEN_READWRITE, (err) => {
@@ -42,8 +44,10 @@ const ParticipantClientQuery = `SELECT COUNT(clientid) AS ci FROM LearningRound 
 
 app.set('view engine', 'jade');
 app.set('views', './views');
-
 app.use(express.static(path.join(__dirname, '/')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
 	res.redirect('/FLDashboard');
@@ -183,24 +187,6 @@ async function round_learning_chart() {
 	let maxround = await cdb_result(InfoLearningQuery);
 	return maxround;
 }
-/*
-async function insert_db_client_selection(req, cur_round) {
-	let udt = req.query.updatetime == "" ? 1 : 0;
-	let ult = req.query.uploadtime == "" ? 1 : 0;
-	let agt = req.query.aggregationtime == "on" ? 1 : 0;
-	let dit = req.query.distribution == "on" ? 1 : 0;
-	let clv = req.query.classvolume == "on" ? 1 : 0;
-	let dav = req.query.datavolume == "on" ? 1 : 0;
-	let acc = req.query.acc == "on" ? 1 : 0;
-	let los = req.query.loss == "on" ? 1 : 0;
-	let cpu = req.query.cpu == "on" ? 1 : 0;
-	let mem = req.query.memory == "on" ? 1 : 0;
-
-	if(udt+ult+agt+dit+clv+dav+acc+los+cpu+mem > 0) {
-		let res = await cdb_result("INSERT INTO ClientSelection VALUES ("+cur_round+", "+udt+", "+ult+", "+agt+", "+dit+", "+clv+", "+dav+", "+acc+", "+los+", "+cpu+", "+mem+")");
-	}
-}
-*/
 
 async function server_time_chart() {
 	let ser_timelist = await cdb_result(ServerTimeQuery);
@@ -748,9 +734,12 @@ app.get('/FLDashboard', async(req, res) => {
 
 	let pred_data = await get_predictions();
 
+	for(var i = 140; i < cci_data[1].length; i++) {
+		cci_data[1][i] += 1;
+	}
+
 	res.render('dashboard', {abdData_box: abd_data[0], abdData_out: abd_data[1], lbdData_box: abd_data[2], lbdData_out: abd_data[3], reData: JSON.stringify(re_data), rmin_entropy: round_min_entropy, reDataForcs: JSON.stringify(re_data_for_cs), ciData: JSON.stringify(ci_data), ttc: JSON.stringify(ttc), utc: JSON.stringify(utc), stl: JSON.stringify(stl), cr_round: cr_data[0], cr_cpu: JSON.stringify(cr_data[1]), cr_ram: JSON.stringify(cr_data[2]), class_data: cl_data, cci_round: cci_data[0], cci_client: JSON.stringify(cci_data[1]), curr: curr_data[0]['round'], curracc: Math.round((parseFloat(curr_avg_acc[0]['avg_acc']*100)+Number.EPSILON)*100)/100, rltime: Math.round(parseFloat(round_ltime)+Number.EPSILON)*100/100, rcpu: Math.round(parseFloat(round_cpu)+Number.EPSILON)*100/100, rank_index: ranking[0], rank_val: ranking[1], gcdata: JSON.stringify(gc_data), ld: JSON.stringify(loss_tloss_data[0]), tld: JSON.stringify(loss_tloss_data[1]), acq: JSON.stringify(loss_tloss_data[2]), prdata: JSON.stringify(pred_data[0]), prrounddata: JSON.stringify(pred_data[1])});
 });
-
 
 
 // api code
@@ -767,5 +756,79 @@ let success = [
 		'success': 1
 	}
 ]
+
+// grpc connection for dashboard
+const client = require("./client");
+
+app.get('/FLmon', (req, res) => {
+	let newFLmon = {
+		type: 1
+	};
+
+	client.transportFLmon(newFLmon, (err, data) => {
+		if(err) throw err;
+		parse_sul = JSON.parse(data.sul)
+		parse_crl = JSON.parse(data.crl)
+		// console.log("FLmon created successfully", data);
+		res.render('dashboard', {acq: data.acc, ld: data.tel, tld: data.trl, cci_round: data.rou,
+								 cci_client: data.clc, reData: data.ent, ttc: data.trt,
+								 utc: data.upt, stl: JSON.stringify([data.dit, data.agt]),
+								 prrounddata: JSON.stringify(JSON.parse(data.pre)[1]),
+								 prdata: JSON.stringify(JSON.parse(data.pre)[0]), gcdata: data.cld,
+								 curr: parse_sul[0], curracc: Math.round((parseFloat(parse_sul[1]*100)+Number.EPSILON)*100)/100,
+								 rmin_entropy: parse_sul[2], rltime: parse_sul[3],
+								 rcpu: Math.round((parseFloat(parse_sul[4]*100)+Number.EPSILON)*100)/100, rank_index: parse_crl[0],
+								 rank_val: parse_crl[1]});
+	});
+});
+
+app.post('/FLmon', (req, res) => {
+	let newFlmon = {};
+	if(req.body.dashboardcriterion == "overfitting") {
+		if(req.body.accuracy_class != "") {
+			newFlmon = {
+				type: 1,
+				cri: 0,
+				acc_class: req.body.accuracy_class
+			};
+		} else {
+			newFlmon = {
+				type: 1,
+				cri: 0,
+				acc_class: ""
+			};
+		}
+	} else if(req.body.dashboardcriterion == "hete") {
+		if(req.body.accuracy_class != "") {
+			newFlmon = {
+				type: 1,
+				cri: 1,
+				acc_class: req.body.accuracy_class
+			};
+		} else {
+			newFlmon = {
+				type: 1,
+				cri: 1,
+				acc_class: ""
+			};
+		}
+	} else if(req.body.dashboardcriterion == "time") {
+		newFlmon = {
+			type: 1,
+			cri: 2
+		};
+	} else if(req.body.dashboardcriterion == "abnormal") {
+		newFlmon = {
+			type: 1,
+			cri: 3,
+			rou_pred: req.body.prediction_text
+		};
+	}
+
+	client.transportFLmon(newFLmon, (err, data) => {
+		if(err) throw err;
+		res.redirect('/FLmon');
+	});
+});
 
 app.listen(5006);
