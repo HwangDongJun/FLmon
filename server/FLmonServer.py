@@ -7,16 +7,11 @@ import time
 import json
 import math
 import sqlite3
+import argparse
 import itertools
 
 import FLmon_pb2
 import FLmon_pb2_grpc
-# from FLmon_pb2 import Scalar
-
-conn_index = sqlite3.connect("../FederatedLearning-gRPC/server/dashboard_db/index.db", check_same_thread=False)
-cur_index = conn_index.cursor()
-conn_learning = sqlite3.connect("../FederatedLearning-gRPC/server/dashboard_db/learning.db", check_same_thread=False)
-cur_learning = conn_learning.cursor()
 
 def accuracy_line_data():
     cur_learning.execute('''SELECT round, sum(loss)/count(loss) AS loss, sum(tloss)/count(tloss) AS tloss FROM LearningTrain GROUP BY round ORDER BY round ASC''')
@@ -454,5 +449,15 @@ def main():
     server.add_insecure_port('[::]:50051')
     server.start()
     server.wait_for_termination()
+
+parser = argparse.ArgumentParser(description='Database Path.')
+parser.add_argument('--index', type=str, action='store_true', required=True, help='index database path.')
+parser.add_argument('--learning', type=str, action='store_true', required=True, help='learning database path.')
+flag = parser.parse_args()
+
+conn_index = sqlite3.connect(flag.index, check_same_thread=False)
+cur_index = conn_index.cursor()
+conn_learning = sqlite3.connect(flag.learning, check_same_thread=False)
+cur_learning = conn_learning.cursor()
 
 main()
